@@ -1,5 +1,6 @@
 package com.example.ejercicio10aleatorizadordeeventos
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -22,15 +23,23 @@ class MainActivity4 : AppCompatActivity() {
 
             if (numDado.equals(1)){
                 encontrar = "Has encontrado un Objeto"
+                val vistaObjeto = Intent(this, ObjetoActivity::class.java)
+                startActivity(vistaObjeto)
             }
             else if (numDado.equals(2)){
                 encontrar = "Has encontrado una Ciudad"
+                val vistaCiudad = Intent(this, VistaCiudad::class.java)
+                startActivity(vistaCiudad)
             }
             else if (numDado.equals(3)){
                 encontrar = "Has encontrado un Mercader"
+                val vistaMercader = Intent(this, VistaMercader::class.java)
+                startActivity(vistaMercader)
             }
             else{
                 encontrar = "Te has encontrado a un enemigo"
+                val vistaEnemigo = Intent(this, VistaEnemigo::class.java)
+                startActivity(vistaEnemigo)
             }
             Toast.makeText(this, encontrar, Toast.LENGTH_SHORT).show()
         }
